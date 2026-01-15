@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthGuide - Daily Medical Suggestions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">⚕️</span>
+                <h1>HealthGuide</h1>
+            </div>
+            <p class="subtitle">Your personal assistant for daily health solutions</p>
+        </header>
+
+        <main>
+            <!-- Step 1: Home / Selection -->
+            <section id="home-view" class="view-section">
+                <div class="home-card">
+                    <div class="search-container">
+                        <label for="condition-select">How are you feeling today?</label>
+                        <select id="condition-select">
+                            <option value="" disabled selected>Select your symptom...</option>
+                            <!-- Options populated by JS -->
+                        </select>
+                        <button id="get-recommendation-btn" class="btn btn-primary">
+                            Get Recommendation ➜
+                        </button>
+                    </div>
+                </div>
+
+                <div class="history-section">
+                    <h3>Recent Searches</h3>
+                    <div id="history-list" class="history-list">
+                        <!-- History items populated by JS -->
+                        <p class="empty-state">No recent searches.</p>
+                    </div>
+                    <button id="clear-history-btn" class="btn btn-text" style="display: none;">Clear History</button>
+                </div>
+            </section>
+
+            <!-- Step 2: Result -->
+            <section id="result-view" class="view-section hidden">
+                <div class="result-card">
+                    <div class="card-header">
+                        <h2 id="condition-name">Condition Name</h2>
+                        <span id="risk-badge" class="badge">Risk: Low</span>
+                    </div>
+
+                    <div class="card-body">
+                        <p id="condition-desc" class="description">Description goes here.</p>
+
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h3>🤒 Symptoms</h3>
+                                <ul id="symptom-list"></ul>
+                            </div>
+                            <div class="info-item">
+                                <h3>💊 Recommended OTC</h3>
+                                <p id="otc-text">Medicine category</p>
+                            </div>
+                            <div class="info-item">
+                                <h3>🏠 Home Care</h3>
+                                <p id="home-care-text">Tips</p>
+                            </div>
+                            <div class="info-item warning">
+                                <h3>⚠️ When to see a Doctor</h3>
+                                <p id="doctor-text">Warning signs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <button id="back-btn" class="btn btn-secondary">← Back to Search</button>
+                        <button id="save-btn" class="btn btn-primary">Save to History</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
